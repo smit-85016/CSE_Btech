@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Follow Mouse</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        #heading {
+            position: absolute;
+            font-size: 24px;
+            background-color: lightcoral;
+            padding: 10px;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <h1 id="heading">Follow Me!</h1>
+    <script>
+        $(document).ready(function () {
+            $("html").mousemove(function (event) {
+                $("#heading").offset({
+                    left: event.pageX,
+                    top: event.pageY
+                });
+            });
+        });
+    </script>
+</body>
+</html>

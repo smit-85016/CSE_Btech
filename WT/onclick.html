@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Click Event Example</title>
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      overflow: hidden;
+      background-color: #f0f0f0;
+      cursor: pointer;
+    }
+
+    .circle {
+      position: absolute;
+      width: 30px;
+      height: 30px;
+      background-color: #ff6f61;
+      border-radius: 50%;
+      pointer-events: none; /* Prevent interaction with created circles */
+      animation: fadeOut 1s ease-out forwards;
+    }
+
+    @keyframes fadeOut {
+      to {
+        transform: scale(2);
+        opacity: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+  <script>
+    document.addEventListener('click', (e) => {
+      const circle = document.createElement('div');
+      circle.classList.add('circle');
+      
+      // Set position based on click
+      circle.style.left = `${e.clientX - 15}px`; // Center horizontally
+      circle.style.top = `${e.clientY - 15}px`;  // Center vertically
+
+      // Add circle to the document
+      document.body.appendChild(circle);
+
+      // Remove circle after animation ends
+      setTimeout(() => {
+        circle.remove();
+      }, 1000); // Matches animation duration
+    });
+  </script>
+</body>
+</html>

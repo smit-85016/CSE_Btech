@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Media Rule Example</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: lightblue; /* Default background color */
+    }
+
+    /* Media rule: applies styles if screen width is less than 768px */
+    @media (max-width: 1000px) {
+      body {
+        background-color: lightgreen;
+      }
+    }
+
+    /* Media rule: applies styles if screen width is less than 480px */
+    @media (max-width: 700px) {
+      body {
+        background-color: orange;
+      }
+    }
+    
+    @media (max-width: 400px) {
+      body {
+        background-color: blueviolet
+        ;
+      }
+    }
+  </style>
+</head>
+<body>
+  <h1>Responsive Design with Media Rule</h1>
+  <p>Resize the browser window to see the background color change.</p>
+</body>
+</html>

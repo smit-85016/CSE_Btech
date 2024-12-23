@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Drag and Drop Lists</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+        }
+
+        .container {
+            display: flex;
+            gap: 20px;
+        }
+
+        .list {
+            width: 200px;
+            min-height: 200px;
+            padding: 20px;
+            background-color: #ffffff;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+        }
+
+        .list h3 {
+            text-align: center;
+            margin-bottom: 10px;
+        }
+
+        .item {
+            padding: 10px;
+            margin: 5px 0;
+            background-color: #d9f2d9;
+            border: 1px solid #a3cfa3;
+            border-radius: 4px;
+            cursor:grab;
+        }
+
+        .list.drag-over {
+            background-color: #e8e8ff;
+            border-color: #001580;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="list" id="list1">
+            <h3>List 1</h3>
+            <div class="item" draggable="true">Item 1</div>
+            <div class="item" draggable="true">Item 2</div>
+            <div class="item" draggable="true">Item 3</div>
+        </div>
+        <div class="list" id="list2">
+            <h3>List 2</h3>
+        </div>
+    </div>
+    <script>
+        const items = document.querySelectorAll('.item');
+        const lists = document.querySelectorAll('.list');
+
+        items.forEach(item => {
+            item.addEventListener('dragstart', () => {
+                item.classList.add('dragging');
+            });
+
+            item.addEventListener('dragend', () => {
+                item.classList.remove('dragging');
+            });
+        });
+
+        lists.forEach(list => {
+            list.addEventListener('dragover', e => {
+                e.preventDefault(); // Allow dropping
+                const draggingItem = document.querySelector('.dragging');
+                list.classList.add('drag-over');
+                list.appendChild(draggingItem);
+            });
+
+            list.addEventListener('dragleave', () => {
+                list.classList.remove('drag-over');
+            });
+
+            list.addEventListener('drop', () => {
+                list.classList.remove('drag-over');
+            });
+        });
+
+    </script>
+</body>
+
+</html>

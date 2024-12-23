@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="eng">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Gallery</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            min-height: 100vh;
+            background-color: #babaff;
+        }
+        .gallery {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        .gallery img {
+            width: 200px;
+            height: 150px;
+            object-fit: cover;
+            border: 2px solid #ccc;
+            border-radius: 8px;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .gallery img:hover {
+            transform: scale(1.05);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        a {
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <h1>Image Gallery</h1>
+    <div class="gallery">
+        <a href="./psylocke-teaser-5120x2880-19067(1).JPG" target="_blank"  >
+            <img src="./psylocke-teaser-5120x2880-19067.JPG" alt="Image 1">
+        </a>
+        <a href="./psylocke-teaser-5120x2880-19067(!).JPG" target="_blank">
+            <img src="./psylocke-teaser-5120x2880-19067.JPG" alt="Image 2">
+        </a>
+        <a href="./psylocke-teaser-5120x2880-19067(2).JPG" target="_blank">
+            <img src="./psylocke-teaser-5120x2880-19067.JPG" alt="Image 3">
+        </a>
+        <a href="./psylocke-teaser-5120x2880-19067.JPG" target="_blank">
+            <img src="./psylocke-teaser-5120x2880-19067.JPG" alt="Image 3">
+        </a>
+        <p>Click on the image to download it:<p>
+        <a href="./psylocke-teaser-5120x2880-19067.JPG" download>
+            <img src="./psylocke-teaser-5120x2880-19067.JPG" alt="W3Schools" width="104" height="142">
+        </a>
+            
+        
+        <p><b>Note:</b> The download attribute is not supported in IE or Edge (prior version 18), or in Safari (prior version 10.1).</p>            
+    </div>
+</body>
+</html>

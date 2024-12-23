@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Picture Element</title>
+    <style>
+        /* Set a consistent size for all images */
+        picture img,
+        picture source {
+            width: 300px; /* Adjust to your desired width */
+            height: 200px; /* Adjust to your desired height */
+            object-fit: cover; /* Ensures proper scaling and cropping */
+        }
+    </style>
+</head>
+<bo0 dy>
+
+<h1>The Picture Element</h1>
+<p>Resize the browser window to load different images.</p>
+
+<!-- <picture>
+    <source media="(min-width: 500px)" srcset="psylocke-teaser-large.jpg" style="width: 300px; height: 200px;">
+    <source media="(min-width: 200px)" srcset="psylocke-teaser-medium.jpg" style="width: 300px; height: 200px;">
+    <img src="psylocke-teaser-fallback.jpg" alt="Flowers" style="width: 300px; height: 200px;">
+</picture> -->
+
+
+<picture>
+    <source srcset="psylocke-teaser-large.jpg" media="(min-width: 1200px)" style="width: 300px; height: 200px;">
+    <source srcset="psylocke-teaser-medium.jpg" media="(min-width: 768px)" style="width: 300px; height: 200px;">
+    <source srcset="psylocke-teaser-small.JPG" media="(max-width: 767px)" style="width: 300px; height: 200px;">
+    
+    <source srcset="psylocke-teaser-large.jpg" media="(min-width: 1200px)" style="width: 300px; height: 200px;">
+    <source srcset="psylocke-teaser-medium.jpg" media="(min-width: 768px)" style="width: 300px; height: 200px;">
+    <source srcset="psylocke-teaser-small.JPG" media="(max-width: 767px)" style="width: 300px; height: 200px;">
+    
+    <img src="./psylocke-teaser-large.JPG" alt="Fashion product" style="width: 100%; height: auto;">
+</picture>
+
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Custom Iframe</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column; /* Centers content vertically */
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            background-color: #ff0000;
+            font-family: Arial, sans-serif;
+        }
+
+        h1 {
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        .iframe-container {
+            position: relative;
+            border: 4px solid #4CAF50; /* Green border */
+            border-radius: 12px; /* Rounded corners */
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Shadow effect */
+            overflow: hidden; /* Ensures content stays within rounded borders */
+        }
+
+        .iframe-container iframe {
+            display: block;
+            border: none; /* Removes the default iframe border */
+        }
+    </style>
+</head>
+<body>
+
+<h1>Embedded Website</h1>
+<div class="iframe-container" style="width: 90%; max-width: 1300px; height: 700px;">
+    <iframe 
+        src="https://smit-personal-portfolio.vercel.app/" 
+        title="Smit's Portfolio"
+        width="100%"
+        height="100%"
+        loading="lazy" 
+        scrolling="auto"
+        allowfullscreen>
+    </iframe>
+</div>
+
+</body>
+</html>
